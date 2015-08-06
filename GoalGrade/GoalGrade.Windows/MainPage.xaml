@@ -1,0 +1,41 @@
+﻿<Page
+    x:Class="GoalGrade.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GoalGrade"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock  VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="30" Text="Enter your current grade:" />
+        <TextBox x:Name="currentGradeTextBox" Height="50" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" Text="0" GotFocus="currentGradeTextBox_GotFocus" InputScope="Number" Loaded="currentGradeTextBox_Loaded" TextChanged="currentGradeTextBox_TextChanged" KeyDown="currentGradeTextBox_KeyDown"/>
+        <Button x:Name="Continue1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Content="Continue" FontSize="26" Click="Continue1_Click" />
+
+        <TextBlock x:Name="DesiredGradeTextBlock" Visibility="Collapsed"  Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="28" Text="Enter your desired final grade:" TextWrapping="Wrap" Margin="0" />
+        <TextBox  Visibility="Collapsed" Grid.Column="1" x:Name="goalGradeTextBox" Grid.Row="1" Height="50" HorizontalAlignment="Center" FontSize="30" Text="0" InputScope="Number" GotFocus="goalGradeTextBox_GotFocus" TextChanged="goalGradeTextBox_TextChanged" KeyDown="goalGradeTextBox_KeyDown" />
+        <Button Visibility="Collapsed" x:Name="Continue2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Content="Continue" FontSize="26" Click="Continue2_Click" />
+
+        <TextBlock x:Name="examWeightTextBlock" Visibility="Collapsed" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="28" Text="Enter weight(%) of final exam:" TextWrapping="Wrap" />
+        <TextBox Visibility="Collapsed" Height="50" Grid.Column="2" x:Name="examWeightTextBox" Grid.Row="1" HorizontalAlignment="Center" FontSize="30" Text="0" GotFocus="examWeightTextBox_GotFocus"  InputScope="Number" TextChanged="examWeightTextBox_TextChanged" KeyDown="examWeightTextBox_KeyDown" />
+        <Button Visibility="Collapsed" x:Name="Calculate" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="2" Content="Calculate Goal Grade" FontSize="26" Click="Calculate_Click" />
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Vertical">
+            <TextBlock x:Name="youWillNeedTextBlock" Visibility="Collapsed" Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="36" Text ="You will need to score:"   TextWrapping="Wrap" />
+            <TextBlock Grid.Column="1" Grid.Row="3" x:Name="resultTextBlock"  Text="" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock Grid.Column="1" Grid.Row="3" x:Name="messageTextBlock" Text="" FontSize="36"  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0" />
+            <Button x:Name="startOverButton" Content="Start Over" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="26" Visibility="Visible" Click="startOverButton_Click" Margin="0,150,0,0" />
+        </StackPanel>
+    </Grid>
+</Page>

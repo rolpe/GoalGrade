@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="GoalGrade.Result"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GoalGrade"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="#FF000A64">
+            <TextBlock VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="36" Text ="You will need to score:" TextWrapping="Wrap" FontFamily="Microsoft JhengHei UI Light" />
+        </Border>
+
+        <Border Grid.Row="1" Background="#FFCE2500" BorderBrush="White" BorderThickness="0,5">
+            <TextBlock x:Name="resultTextBlock" Grid.Row="1" Text="" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Microsoft YaHei UI Light" />
+        </Border>
+
+        <Border Grid.Row="2" Background="#FF000A64">
+            <TextBlock x:Name="messageTextBlock" Text="" FontSize="36" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,200" TextWrapping="Wrap" FontFamily="Microsoft JhengHei UI Light" />
+        </Border>
+
+        <Button x:Name="backbutton" Grid.Row="2" FontSize="32" VerticalAlignment="Bottom" HorizontalAlignment="Center" Content="Start over" Margin="0,0,0,40" Click="backbutton_Click" Background="#FFCE2500" FontFamily="Microsoft JhengHei UI Light" FontWeight="Normal" />
+    </Grid>
+</Page>
